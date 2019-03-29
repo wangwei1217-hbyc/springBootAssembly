@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: springBootAssembly
+  profiles:
+    active: dev
+server:
+  port: 8080
