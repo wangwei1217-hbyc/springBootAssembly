@@ -27,6 +27,13 @@
 			 <!--将scope为runtime的依赖包打包-->
 			 <!--<scope>runtime</scope>-->
 		 </dependencySet>
+		<!-- 增加scope类型为system的配置 -->
+		<!--<dependencySet>
+			<outputDirectory>lib</outputDirectory>
+			<useProjectArtifact>true</useProjectArtifact>
+			<unpack>true</unpack>
+			<scope>system</scope>
+		</dependencySet>-->
 	</dependencySets>
 	<fileSets>
 		<fileSet>
@@ -52,14 +59,14 @@
 				<exclude>assembly.xml</exclude>
 			</excludes>
 			<outputDirectory>conf</outputDirectory>
-			<fileMode>0755</fileMode>
+			<fileMode>0644</fileMode>
 		</fileSet>
-		<!-- 
+
 		<fileSet>
-			<directory>lib</directory>
+			<directory>${project.basedir}/lib</directory>
 			<outputDirectory>lib</outputDirectory>
 		</fileSet>
-		 -->
+
 	</fileSets>
 
 </assembly>

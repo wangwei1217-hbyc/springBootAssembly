@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import java.util.UUID;
 
 /**
  * Created by wangwei on 2019/3/28.
@@ -19,6 +20,8 @@ public class TestController {
     @GetMapping("index")
     public Object index(){
         System.out.println(redisTemplate);
-        return "success";
+        redisTemplate.setnx("token", UUID.randomUUID().toString().replaceAll("-",""));
+        System.out.println(redisTemplate.get("token"));
+        return "success:"+redisTemplate.get("token");
     }
 }
