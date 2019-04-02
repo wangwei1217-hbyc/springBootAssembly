@@ -16,7 +16,7 @@ import java.util.List;
  * @ClassName RedisConfig
  * @Description Redis 配置类
  */
-@Configuration
+//@Configuration
 public class RedisConfig {
 
     @Value("${spring.redis.host}")

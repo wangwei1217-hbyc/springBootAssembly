@@ -20,9 +20,10 @@
 	</formats>
 	<includeBaseDirectory>true</includeBaseDirectory>
 	<dependencySets>
+		 <!--把项目所有依赖的jar包打包到最终lib中-->
 		 <dependencySet>
-			 <!--是否把本项目添加到依赖文件夹下-->
-			 <useProjectArtifact>true</useProjectArtifact>
+			 <!--是否把本项目添加到依赖文件夹下,亲测，好像可以不配-->
+			 <!--<useProjectArtifact>true</useProjectArtifact>-->
 			 <outputDirectory>lib</outputDirectory>
 			 <!--将scope为runtime的依赖包打包-->
 			 <!--<scope>runtime</scope>-->
@@ -37,7 +38,7 @@
 	</dependencySets>
 	<fileSets>
 		<fileSet>
-			<directory>target/springBootAssembly/bin</directory>
+			<directory>assembly/bin</directory>
 			<outputDirectory>bin</outputDirectory>
 			<!--
                    与UNIX权限类似，设置所包含文件的文件模式。这是一个 OCTAL VALUE。格式：（用户）（组）（其他）其中每个组件是Read = 4，Write = 2和Execute = 1的总和。
@@ -62,11 +63,11 @@
 			<fileMode>0644</fileMode>
 		</fileSet>
 
+		<!--把项目根目录下lib包下的自定义引入的第三方jar打包到最终lib中-->
 		<fileSet>
 			<directory>${project.basedir}/lib</directory>
 			<outputDirectory>lib</outputDirectory>
 		</fileSet>
 
 	</fileSets>
-
 </assembly>
