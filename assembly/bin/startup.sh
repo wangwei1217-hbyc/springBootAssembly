@@ -108,7 +108,7 @@ if $cygwin; then
 fi
 
 
-exec nohup "$JAVACMD" $JAVA_OPTS -server -Xmx1G -Xms1G \
+exec nohup "$JAVACMD" $JAVA_OPTS -server -Xmx1G -Xms512MB \
   -classpath "$CLASSPATH" \
   -Dapp.name="startup" \
   -Dapp.pid="$$" \

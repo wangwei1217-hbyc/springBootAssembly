@@ -228,7 +228,7 @@
                                 <extraArguments>
                                     <extraArgument>-server</extraArgument>
                                     <extraArgument>-Xmx1G</extraArgument>
-                                    <extraArgument>-Xms1G</extraArgument>
+                                    <extraArgument>-Xms512MB</extraArgument>
                                 </extraArguments>
                             </jvmSettings>
                         </program>
